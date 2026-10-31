@@ -1,12 +1,13 @@
 :root {
     color-scheme: light;
-    --ink: #171717;
-    --muted: #777773;
-    --paper: #f5f5f3;
-    --accent: #c14958;
-    --accent-dark: #8f2332;
-    --night: #35121a;
-    --night-deep: #2b0d13;
+    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    --ink: #111;
+    --muted: #727272;
+    --paper: #f1f1ef;
+    --accent: #1800f5;
+    --accent-dark: #1800f5;
+    --night: #101010;
+    --night-deep: #080808;
     --header-height: 72px;
 }
 
@@ -23,7 +24,7 @@ body {
     margin: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: Arial, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -56,9 +57,9 @@ input:focus-visible {
     justify-content: space-between;
     height: var(--header-height);
     padding: 0 clamp(22px, 5vw, 76px);
-    border-bottom: 1px solid rgb(255 255 255 / 13%);
-    background: rgb(43 13 19 / 88%);
-    color: #fff;
+    border-bottom: 1px solid #111;
+    background: rgb(241 241 239 / 94%);
+    color: #111;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 }
@@ -91,7 +92,7 @@ input:focus-visible {
 }
 
 .main-nav a {
-    color: rgb(255 255 255 / 76%);
+    color: rgb(17 17 17 / 76%);
 }
 
 .main-nav a:hover,
@@ -104,7 +105,7 @@ input:focus-visible {
     align-items: center;
     gap: 12px;
     padding: 10px 0 10px 14px;
-    color: #fff;
+    color: #111;
 }
 
 .nav-cta span {
@@ -141,8 +142,8 @@ input:focus-visible {
 
 .hero-shade {
     background:
-        linear-gradient(90deg, rgb(37 8 15 / 83%) 0%, rgb(47 12 20 / 61%) 37%, rgb(47 12 20 / 8%) 100%),
-        linear-gradient(0deg, rgb(37 8 15 / 53%) 0%, transparent 36%);
+        linear-gradient(90deg, rgb(0 0 0 / 83%) 0%, rgb(0 0 0 / 61%) 37%, rgb(0 0 0 / 8%) 100%),
+        linear-gradient(0deg, rgb(0 0 0 / 53%) 0%, transparent 36%);
 }
 
 .hero-content {
@@ -284,6 +285,7 @@ input:focus-visible {
 .story-section {
     max-width: 1440px;
     margin: 0 auto;
+    background-image: repeating-linear-gradient(0deg, transparent 0, transparent 47px, rgb(0 0 0 / 3%) 48px);
 }
 
 .section-heading h2,
@@ -312,14 +314,14 @@ input:focus-visible {
     position: relative;
     overflow: hidden;
     margin: 0;
-    background: #222;
+    background: #111;
 }
 
 .image-frame img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .story-image-frame {
@@ -579,7 +581,7 @@ input:focus-visible {
 
 .listen-section {
     background:
-        radial-gradient(ellipse at 82% 18%, rgb(143 35 50 / 19%), transparent 29%),
+        radial-gradient(ellipse at 82% 18%, rgb(24 0 245 / 16%), transparent 29%),
         var(--night-deep);
     color: #fff;
 }
@@ -631,7 +633,7 @@ input:focus-visible {
 }
 
 .listen-footnote a {
-    color: #d66b77;
+    color: #8f84ff;
     text-underline-offset: 3px;
 }
 
@@ -722,8 +724,8 @@ input:focus-visible {
 
     .hero-shade {
         background:
-            linear-gradient(90deg, rgb(37 8 15 / 75%), rgb(47 12 20 / 20%) 100%),
-            linear-gradient(0deg, rgb(37 8 15 / 60%), transparent 53%);
+            linear-gradient(90deg, rgb(0 0 0 / 75%), rgb(0 0 0 / 20%) 100%),
+            linear-gradient(0deg, rgb(0 0 0 / 60%), transparent 53%);
     }
 
     .hero-content {
@@ -909,5 +911,273 @@ input:focus-visible {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
+    }
+}
+
+.site-header {
+    border-bottom-color: #111;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 55%);
+}
+
+.wordmark {
+    letter-spacing: -.09em;
+}
+
+.hero-period,
+.wordmark span,
+.hero-eyebrow span {
+    color: var(--accent);
+}
+
+.button-light {
+    border-radius: 0;
+}
+
+.image-frame,
+.story-image-frame,
+.members-image-frame,
+.tour-image-frame,
+.youtube-player {
+    border-radius: 0;
+}
+
+.story-section,
+.tour-section {
+    background-color: var(--paper);
+    background-image:
+        linear-gradient(rgb(0 0 0 / 2%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(0 0 0 / 2%) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+.section-heading h2,
+.listen-heading h2 {
+    letter-spacing: -.075em;
+}
+
+.section-heading h2 span {
+    color: #777;
+}
+
+.section-heading .eyebrow,
+.listen-heading .eyebrow {
+    font-size: 10px;
+    letter-spacing: .08em;
+}
+
+.story-copy > p:not(.story-lead),
+.members-intro,
+.member-card p,
+.tour-location p,
+.listen-heading > p:last-child {
+    line-height: 2;
+}
+
+.story-note {
+    border-left-color: var(--accent);
+}
+
+.story-note-mark,
+.tour-date span,
+.tour-location h3 span,
+.tour-arrow,
+.text-link span,
+.nav-cta span {
+    color: var(--accent);
+}
+
+.members-section {
+    background-color: #101010;
+    background-image:
+        linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+.members-image-frame,
+.tour-image-frame {
+    border: 1px solid rgb(0 0 0 / 18%);
+}
+
+.member-card {
+    border-left-color: #414141;
+}
+
+.member-card:first-child {
+    border-left: 0;
+}
+
+.member-number {
+    color: #aaa;
+}
+
+.tour-stop {
+    transition: background-color .2s ease, padding .2s ease;
+}
+
+.tour-stop:hover {
+    padding-right: 10px;
+    padding-left: 10px;
+    background: rgb(24 0 245 / 5%);
+}
+
+.tour-location h3 {
+    letter-spacing: -.04em;
+}
+
+.listen-section {
+    background-image:
+        linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px),
+        radial-gradient(ellipse at 82% 18%, rgb(24 0 245 / 16%), transparent 29%);
+    background-size: 32px 32px, 32px 32px, auto;
+}
+
+.track-panel {
+    display: grid;
+    width: min(1100px, 100%);
+    grid-template-columns: minmax(200px, .7fr) minmax(0, 1.3fr);
+    align-items: center;
+    gap: clamp(24px, 5vw, 65px);
+    margin: 48px auto 0;
+    padding: clamp(20px, 4vw, 42px);
+    border: 1px solid rgb(255 255 255 / 28%);
+    background: rgb(0 0 0 / 25%);
+}
+
+.track-info {
+    min-width: 0;
+}
+
+.track-label {
+    margin: 0 0 22px;
+    color: #aaa;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.track-info h3 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: -.08em;
+    line-height: 1;
+}
+
+.track-info > p:not(.track-label) {
+    margin: 14px 0 5px;
+    color: #ddd;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.track-info > span {
+    color: #999;
+    font-size: 10px;
+}
+
+.track-link {
+    display: flex;
+    width: fit-content;
+    margin-top: 28px;
+    color: #fff;
+}
+
+.track-link span {
+    color: #8f84ff;
+}
+
+.youtube-player {
+    width: 100%;
+    margin: 0;
+    border: 1px solid rgb(255 255 255 / 18%);
+    box-shadow: none;
+}
+
+.site-footer {
+    border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+.site-footer > a:last-child:hover,
+.listen-footnote a:hover {
+    color: #fff;
+}
+
+.hero h1,
+.section-heading h2,
+.listen-heading h2,
+.member-card h3,
+.tour-location h3,
+.track-info h3 {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
+    font-weight: 500;
+    letter-spacing: -.025em;
+}
+
+.hero-description,
+.story-lead,
+.story-copy > p:not(.story-lead),
+.story-note p,
+.members-intro,
+.member-card p,
+.tour-disclaimer,
+.tour-location p,
+.tour-footnote,
+.listen-heading > p:last-child,
+.track-info > p:not(.track-label),
+.listen-footnote {
+    font-weight: 600;
+}
+
+.main-nav a,
+.nav-cta,
+.text-link,
+.button {
+    font-weight: 650;
+}
+
+.eyebrow,
+.hero-caption,
+.hero-index,
+.member-number,
+.tour-date span,
+.tour-location h3 span,
+.track-label,
+.track-info > span,
+.site-footer > p,
+.site-footer > a:last-child {
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.hero-description,
+.story-lead,
+.story-copy > p:not(.story-lead),
+.story-note p,
+.members-intro,
+.member-card p,
+.tour-disclaimer,
+.tour-location p,
+.tour-footnote,
+.listen-heading > p:last-child,
+.track-info > p:not(.track-label),
+.listen-footnote {
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 760px) {
+    .track-panel {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 35px;
+    }
+
+    .track-label {
+        margin-bottom: 13px;
+    }
+
+    .track-link {
+        margin-top: 17px;
     }
 }
